@@ -1,0 +1,42 @@
+Resource Utilization of different Adder Implementations
+
+In this assignment you will have to develop 2 different adder implementations, which will take 4bit operands and is able to calculate the 4bit sum plus 1 carry bit (i.e. the sum is in total 5bits wide at maximum).
+
+PART 1:
+a. Implement an 4bit carry ripple adder using only gate-level modeling. For each module use a separate Verilog file named like the containing module. E.g. module XXX() is in xxx.v
+b. Implement an 4bit adder using the operator '+' that is available in the data-flow modeling.
+c. Write a test bench for implementations to check the functionality and correctness.
+
+In any case, you will have to optimize your implementation so that the least amount of resources (slices) is required. FPGA slices are precious resources.
+
+Start with a bottom-up design and with the leaf nodes. Think about small functionality that you need first. In modules higher in the hierarchy you will instantiate and interconnect the lower modules to create bigger modules with more sophisticated functionality.
+
+PART 2:
+Generate a bit stream file and upload it into the SRAM of your FPGA. The switches SW3 - SW0 shall represent the 1st operand, switches SW7 - SW4 the second operand. The result is then displayed on LEDs LD4-LD0.
+
+Hint: You will see that next to SW4 another code is mentioned (G3 in this case). These code are corresponding to the pin of the FPGA. Means, if you want to have SW4 as an input, you have to handle pin G3. To do that, you have to create a UCF file (New File->Implementation Constrains File) with the following content:
+
+NET operand1<0> LOC = "G3";
+
+This connects G3 to the 0th wire of the input operand1.
+
+If you need a clock, it is pin B8.
+
+
+PART 3:
+As in the previous assignment:
+
+1. BOTH group partners are going to submit a documentation (that means for every group I am going to receive 2 different documents) individually using PDF format (no Microsoft proprietary document format). Submitting the same document twice is not permitted and all document submissions are subjected plagiarism checks.
+
+2. Content of the documentation:
+
+A flow chart showing your modules and the dependencies among them (helpful even before start programming). Mention the module name in each vertex. If you need more instances of a module, draw them as well.
+Draw a schematic of the carry ripple adder and show, how the components such as half adder and full adder are connected.
+How do I know that the clock is on pin B8?
+What are the resource requirements in terms of LUTs, IOBs and slices for both your adder implementations? Compare them in a table!
+If there are any differences, explain them! If there are not, explain that as well!
+What is the performance (worst delay) of your adders? Compare them in a table! (Hint: You can this information in the "Post-Place and Route Static Timing Report" or "Text based Post-Place and Route Static Timing Report")
+What are the critical paths for your adders and where do they originate and where do they end? Discuss your results!
+Explain the differences in performances of your adder implementations!
+Do a little bit research and find another adder implementation. How does it work and what is its advantage/disadvantage?
+Make a screen shot of the resource utilization of both your implementations on the FPGA. (Hint: "Analyze Timing/Floorplan Design (FPGA)". Be patient, it takes some time.). Explain the major components/blocks that you see and partly use there.

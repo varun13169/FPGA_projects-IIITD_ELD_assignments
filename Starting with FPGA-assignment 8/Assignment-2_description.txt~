@@ -1,0 +1,24 @@
+A) After everything is installed, it is about time to try out your new software.
+
+	Write Verilog HDL code to realize a 3 input priority encoder.
+	Hint: The priority encoder determines the MSB that is set to 1, from its input ports and ignores any further occurrences of set 	bits. Therefore the output of the inputs of e.g. 101 and 100 is the same, since the LSB is ignored. If all inputs are cleared, the 		output of the priority encoder is 0. If the LSB (001) is set, the output is 1.
+
+	a. Write a truth table for all possible inputs of your priority encoder and include this table in your documentation.
+	b. Write your priority encoder using the gate-level model of Verilog.
+	c. Write your priority encoder using the dataflow model of Verilog.
+	d. Write your priority encoder using the behavioral model of Verilog.
+
+
+	If you do not know, how to use the software, have a look at the PDF "EE 244 Tutorial for programming the BASYS.pdf" from page 21 		onwards.
+
+	Please note:
+	The device we are using, is slightly different:
+	Family: Spartan3E
+	Device: XC3S250E
+	Package: CP132
+
+	Instead of adding a source, you have to create your own source files. Remember to use a bottom-up approach and to use one file per 		module. For instance: module dff is in dff.v, while module TFF is in tff.v. 
+
+
+B) Synthesize your design (Synthesize - XST).
+
