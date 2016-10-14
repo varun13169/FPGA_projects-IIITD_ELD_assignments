@@ -40,3 +40,5 @@ What are the critical paths for your adders and where do they originate and wher
 Explain the differences in performances of your adder implementations!
 Do a little bit research and find another adder implementation. How does it work and what is its advantage/disadvantage?
 Make a screen shot of the resource utilization of both your implementations on the FPGA. (Hint: "Analyze Timing/Floorplan Design (FPGA)". Be patient, it takes some time.). Explain the major components/blocks that you see and partly use there.
+
+Hacktober is here!
